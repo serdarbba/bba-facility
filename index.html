@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BBA Teknoloji · Facility intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#fbfaf7; --ink:#10161e; --ink2:#4c5b68; --ink3:#77848f;
+    --line:#ded9cf; --soft:#f2efe8; --sea:#0d5f6b; --sea2:#0a4a54;
+    --dark:#0e1319;
+    --sans:"IBM Plex Sans","Segoe UI",-apple-system,Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.55}
+  img,video{max-width:100%;display:block}
+  a{color:inherit}
+
+  .wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--line);background:var(--paper);
+    position:sticky;top:0;z-index:10}
+  .hd{display:flex;justify-content:space-between;align-items:center;
+    gap:16px;padding-block:14px;flex-wrap:wrap}
+  .hd img{height:26px}
+  .hd .meta{font-family:var(--mono);font-size:11px;color:var(--ink2);
+    text-align:right;line-height:1.6;letter-spacing:.2px}
+  .hd .meta b{color:var(--ink);font-weight:500}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:52px 0}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--sea);margin-bottom:18px}
+  h1{font-size:clamp(30px,5.6vw,50px);line-height:1.08;letter-spacing:-1.1px;
+    font-weight:600;max-width:15ch;text-wrap:balance}
+  .lede{margin-top:22px;font-size:clamp(16px,2vw,18.5px);color:var(--ink2);
+    max-width:62ch}
+  .lede b{color:var(--ink);font-weight:600}
+
+  /* ---------- media ---------- */
+  figure{margin-top:32px;border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;background:var(--dark)}
+  figure video,figure img{width:100%}
+  figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink2);
+    background:var(--soft);padding:10px 14px;line-height:1.5;
+    border-top:1px solid var(--line)}
+  figcaption b{color:var(--ink);font-weight:500}
+
+  /* ---------- sections ---------- */
+  section{padding-block:56px;border-top:1px solid var(--line);margin-top:56px}
+  section:first-of-type{border-top:0;margin-top:0}
+  .num{font-family:var(--mono);font-size:11.5px;color:var(--sea);
+    letter-spacing:1.4px;margin-bottom:14px}
+  h2{font-size:clamp(22px,3.4vw,31px);line-height:1.18;letter-spacing:-.6px;
+    font-weight:600;max-width:20ch;text-wrap:balance}
+  section p{margin-top:18px;color:var(--ink2);max-width:62ch;font-size:16.5px}
+  section p b{color:var(--ink);font-weight:600}
+  section p + p{margin-top:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+    gap:1px;background:var(--line);border:1px solid var(--line);
+    border-radius:6px;overflow:hidden;margin-top:30px}
+  .cell{background:var(--paper);padding:20px 18px}
+  .cell h3{font-size:14.5px;font-weight:600;letter-spacing:-.1px}
+  .cell p{margin-top:8px;font-size:14px;color:var(--ink2);max-width:none}
+
+  ul.pts{margin-top:22px;list-style:none;max-width:62ch}
+  ul.pts li{padding-left:20px;position:relative;color:var(--ink2);
+    font-size:16px;margin-top:11px}
+  ul.pts li:before{content:"";position:absolute;left:0;top:10px;
+    width:7px;height:7px;background:var(--sea);border-radius:50%}
+  ul.pts li b{color:var(--ink);font-weight:600}
+
+  /* ---------- proof ---------- */
+  .proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:26px;margin-top:30px}
+  .pr{border-left:2px solid var(--sea);padding-left:16px}
+  .pr .w{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--sea)}
+  .pr h3{font-size:16px;font-weight:600;margin-top:7px}
+  .pr p{margin-top:7px;font-size:14.5px;color:var(--ink2);max-width:none}
+
+  /* ---------- cta ---------- */
+  .cta{background:var(--dark);color:#eef2f4;border-radius:8px;
+    padding:38px 30px;margin-top:56px}
+  .cta h2{color:#fff;max-width:18ch}
+  .cta p{color:#a8b6c0;max-width:56ch;margin-top:16px;font-size:16.5px}
+  .cta p b{color:#fff}
+  .btn{display:inline-block;margin-top:26px;background:#25d366;color:#06331a;
+    font-weight:600;font-size:16px;padding:14px 26px;border-radius:5px;
+    text-decoration:none}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .cta .alt{margin-top:18px;font-family:var(--mono);font-size:12.5px;
+    color:#8d9ba6;line-height:1.8}
+  .cta .alt a{color:#dfe7eb}
+
+  footer{border-top:1px solid var(--line);margin-top:56px;padding-block:26px 44px;
+    font-family:var(--mono);font-size:11.5px;color:var(--ink3);line-height:1.8}
+  footer b{color:var(--ink2);font-weight:500}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
+  @media (max-width:560px){
+    .hd .meta{text-align:left}
+    .hero{padding-block:38px 0}
+    section{padding-block:42px;margin-top:42px}
+    .cta{padding:30px 22px;border-radius:6px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <img src="assets/logo.png" alt="BBA">
+    <div class="meta">
+      <b>BBA Teknoloji</b> · İzmir, Türkiye<br>
+      NCAGE TN069 · registered defence supplier
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Facility intelligence</div>
+    <h1>Your site already has cameras. Nobody is watching all of them.</h1>
+    <p class="lede">A large site runs hundreds of cameras and two or three people in
+    a control room. They watch what is on the wall and miss the rest, and the footage
+    only gets opened after something has gone wrong. <b>We put a layer on top of the
+    cameras and the unmanned systems you already own</b>, so the site is watched
+    continuously and what matters reaches a person while it still matters.</p>
+
+    <figure>
+      <video src="assets/count.mp4" poster="assets/count_poster.jpg"
+             autoplay muted loop playsinline></video>
+      <figcaption><b>Counting from the air.</b> Every vehicle is detected and
+      counted as the aircraft moves. The same model counts people, pallets,
+      containers and stock volume.</figcaption>
+    </figure>
+  </div>
+
+  <section>
+    <div class="num">01</div>
+    <h2>One screen for everything that moves on your site</h2>
+    <p>Not only drones. Aircraft, ground robots, fixed cameras, gates and access
+    control, alarm panels, patrol teams. <b>Whoever made them, they run from one
+    operations centre.</b> Mission plans, live telemetry, video, a gate command,
+    the event queue and reporting all sit on the same screen.</p>
+    <p>We do not ask you to replace what you have. The equipment stays, the layer
+    goes on top of it.</p>
+
+    <div class="grid">
+      <div class="cell"><h3>Air</h3><p>DJI, PX4 and ArduPilot platforms, fixed wing
+      and VTOL, on one mission planner.</p></div>
+      <div class="cell"><h3>Ground</h3><p>Ground robots and quadrupeds for indoor
+      patrol where flight is not permitted.</p></div>
+      <div class="cell"><h3>Fixed</h3><p>The cameras already installed, with no new
+      hardware on site.</p></div>
+      <div class="cell"><h3>Access</h3><p>Gates, barriers and turnstiles, opened and
+      logged from the same console.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">02</div>
+    <h2>Analysis on the cameras you already own</h2>
+    <p>This is where most of the value is, and it needs <b>no new hardware</b>.
+    Your existing streams come into the same system and are read continuously.</p>
+    <ul class="pts">
+      <li><b>Safety.</b> A forklift meeting a person on foot, entry into a restricted
+      zone, work without protective equipment, a blocked escape route.</li>
+      <li><b>Security.</b> Perimeter crossing, loitering after hours, a vehicle
+      standing where it should not, an unattended object.</li>
+      <li><b>Operations.</b> Stock volume in the yard, truck and ramp dwell time,
+      queue length, surface defects on the line.</li>
+      <li><b>Early warning.</b> Smoke and fire, leaks and spills, long before the
+      alarm panel reacts.</li>
+    </ul>
+
+    <figure>
+      <img src="assets/vision.jpg" alt="All analyses on one screen">
+      <figcaption><b>Every analysis on one screen.</b> Detection, counting,
+      classification and heatmaps run together on the same stream.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="num">03</div>
+    <h2>Coastline, perimeter and approach</h2>
+    <p>For a port, a terminal, a refinery jetty or a coastal facility, the camera
+    is not enough on its own. The picture, the map and the vessel track have to sit
+    together, and a target has to be named while it is still approaching.</p>
+    <p>We are delivering exactly this to <b>Dubai Municipality</b> as coastal
+    monitoring, with numerical acceptance criteria written into the tender and the
+    system running on their own servers. The same system has been running on the
+    bay in İzmir, and that is the one shown below.</p>
+
+    <figure>
+      <video src="assets/coast.mp4" poster="assets/coast_poster.jpg"
+             autoplay muted loop playsinline></video>
+      <figcaption><b>Bay monitoring, İzmir.</b> Coastal cameras, vessel risk
+      ranking and the alert log on one screen. The operator interface is built in
+      the customer's own language, which is why this one reads in Turkish.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="num">04</div>
+    <h2>The site as a model, not a list of device codes</h2>
+    <p>Buildings, lines, equipment and vehicles stand in a three dimensional model
+    in their real positions, and every object carries its own live state. Which pump
+    is vibrating, which gate is open, where the forklift is.</p>
+    <p>An operator does not read a device code. <b>They look at the site.</b> A new
+    person becomes useful in days instead of months, and a contractor sees the same
+    picture as the owner.</p>
+
+    <figure>
+      <img src="assets/nexus.jpg" alt="Digital twin over a live city view">
+      <figcaption><b>Live state on a real map.</b> Work sites, equipment and
+      records held on one model rather than in separate spreadsheets.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="num">05</div>
+    <h2>The part that makes it worth paying for every month</h2>
+    <p>Detection on its own produces noise. A system that raises four hundred alarms
+    a day gets switched off in a week. <b>The layer above it is what we sell.</b></p>
+    <ul class="pts">
+      <li>Events are ranked, not piled up. The operator sees what matters first.</li>
+      <li>Each event is routed to the person responsible, with a time limit.</li>
+      <li>Every record is dated and cannot be altered afterwards, so it stands up in
+      an audit or an insurance claim.</li>
+      <li>Repetition is surfaced. <b>Third near miss in this corridor this month, all
+      three at shift change.</b> That sentence is what changes a decision.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num">06</div>
+    <h2>Where it runs</h2>
+    <div class="proof">
+      <div class="pr">
+        <div class="w">Dubai</div>
+        <h3>Retail development</h3>
+        <p>We were awarded the security and operations platform for one of the
+        largest retail developments in the world.</p>
+      </div>
+      <div class="pr">
+        <div class="w">Dubai</div>
+        <h3>Dubai Municipality</h3>
+        <p>Coastal monitoring. Fifteen analyses from a single flight, on their own
+        servers, against written numerical acceptance criteria.</p>
+      </div>
+      <div class="pr">
+        <div class="w">Türkiye</div>
+        <h3>Energy and public sector</h3>
+        <p>Work with Turkish Petroleum and İzmir Metropolitan Municipality, and
+        experience with the Ministry of National Defence.</p>
+      </div>
+      <div class="pr">
+        <div class="w">Registration</div>
+        <h3>NCAGE TN069</h3>
+        <p>Registered defence supplier, with our systems recorded under NATO stock
+        numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>One site, one month, your existing cameras</h2>
+    <p>We do not ask you to rebuild anything to find out whether this works. Pick
+    one site and give us the streams that are already running. At the end of the
+    month you hold a report showing <b>which points on your site keep producing the
+    same problem</b>, with the footage behind each one. That report is worth having
+    on its own, and it is the honest way to decide whether the monthly system is
+    worth it.</p>
+    <a class="btn" href="https://wa.me/905305974187?text=Hello%20BBA%2C%20I%20saw%20your%20facility%20page%20and%20would%20like%20to%20talk."
+       target="_blank" rel="noopener">Message us on WhatsApp</a>
+    <div class="alt">
+      Serdar Batkan · +90 530 597 41 87<br>
+      <a href="mailto:serdarbatkan@bbateknoloji.com">serdarbatkan@bbateknoloji.com</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="wrap">
+  <b>BBA Teknoloji</b> · İzmir, Türkiye · AI software, autonomous systems, computer vision<br>
+  NCAGE TN069 · registered defence supplier
+</footer>
+
+</body>
+</html>
